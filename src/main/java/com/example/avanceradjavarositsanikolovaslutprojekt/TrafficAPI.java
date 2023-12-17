@@ -1,7 +1,4 @@
 package com.example.avanceradjavarositsanikolovaslutprojekt;
-import java.lang.reflect.Array;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -11,9 +8,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.eclipsesource.json.*;
-import com.google.gson.Gson;
 public class TrafficAPI {
-    private static ArrayList<String> gpsPoints = new ArrayList<String>(), error = new ArrayList<String>();;
+    private static ArrayList<String> gpsPoints = new ArrayList<String>();
+    private static ArrayList<String> error = new ArrayList<String>();
     private static Pattern pattern = Pattern.compile("[\\d]{2}.[\\d]+\\s[\\d]{2}.[\\d]+");
     private static Matcher matcher;
     public static ArrayList<String> readTraffik(ArrayList<String> userSelection) {

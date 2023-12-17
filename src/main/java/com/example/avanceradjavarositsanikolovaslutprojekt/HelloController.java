@@ -36,9 +36,8 @@ public class HelloController {
 
         points.add(from);
         points.add(to);
-        ArrayList<String> result = TrafficAPI.readTraffik(points);
-        System.out.println(result);
-
+        ArrayList<String> resultGpsPoints = TrafficAPI.readTraffik(points);
+        WeatherAPI.getWeather(resultGpsPoints);
         points.clear();
     }
 }
