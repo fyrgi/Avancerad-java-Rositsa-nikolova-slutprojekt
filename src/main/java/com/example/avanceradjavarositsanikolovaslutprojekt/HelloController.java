@@ -13,7 +13,7 @@ public class HelloController {
     protected void onHelloButtonClick() {
         ArrayList<String> points = new ArrayList<>();
         points.add("Barkarby");
-        points.add("Malmö");
+        points.add("Växjö");
         TrafficAPI.readTraffik(points);
     }
 }

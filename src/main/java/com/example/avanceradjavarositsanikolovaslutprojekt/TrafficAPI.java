@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 public class TrafficAPI {
 
     private static ArrayList<String> gpsPoints = new ArrayList<String>();
-    private static Pattern pattern = Pattern.compile("[\\d]{2}.[\\d]{15}\\s[\\d]{2}.[\\d]{14}");
+    private static Pattern pattern = Pattern.compile("[\\d]{2}.[\\d]+\\s[\\d]{2}.[\\d]+");
     private static Matcher matcher;
     public static void readTraffik(ArrayList<String> userSelection){
 
@@ -26,7 +26,7 @@ public class TrafficAPI {
                         "  <LOGIN authenticationkey=\"demokey\"/>\n" +
                         "  <QUERY objecttype=\"TrainStation\" namespace=\"rail.infrastructure\" schemaversion=\"1.4\">\n" +
                         "    <FILTER>\n" +
-                        "      <!--<EQ name = \"AdvertisedLocationName\" value = \"" + userSelection.get(reachedLength) + "\" />-->\n" +
+                        "      <EQ name = \"OfficialLocationName\" value = \"" + userSelection.get(reachedLength) + "\" />\n" +
                         "      <EQ name = \"CountryCode\" value = \"SE\" />\n" +
                         "      <EQ name = \"Advertised\" value = \"true\" />\n" +
                         "    </FILTER>\n" +
@@ -50,6 +50,8 @@ public class TrafficAPI {
                         .get(0).asObject()
                         .get("TrainStation").asArray()
                         .get(0).asObject().get("Geometry").asObject().get("WGS84").asString();
+                System.out.println("temp "+ temp);
+
                 matcher = pattern.matcher(temp);
                 while(matcher.find()) {
                     temp = matcher.group();
