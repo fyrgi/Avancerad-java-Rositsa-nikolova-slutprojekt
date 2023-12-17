@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25165b14-b286-4ef1-bdd9-1482539d18c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/ResultWeatherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/avanceradjavarositsanikolovaslutprojekt/result-weather.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/TrafficAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/TrafficAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/WeatherAPI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702630238101</updated>
       <workItem from="1702630239154" duration="3022000" />
-      <workItem from="1702727713109" duration="31334000" />
+      <workItem from="1702727713109" duration="31511000" />
     </task>
     <servers />
   </component>

@@ -26,7 +26,7 @@ public class WeatherAPI {
                 String lat = points.get(stopsCount).substring(spaceIndex+1);
                 String lon = points.get(stopsCount).substring(0, spaceIndex);
 
-                URL url = new URL("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=5756ae175fada5c93f07cf136851b305");
+                URL url = new URL("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=5756ae175fada5c93f07cf136851b305&units=metric");
 
                 // Open a connection to the URL
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
