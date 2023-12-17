@@ -11,6 +11,8 @@ import com.eclipsesource.json.*;
 public class TrafficAPI {
     private static ArrayList<String> gpsPoints = new ArrayList<String>();
     private static ArrayList<String> error = new ArrayList<String>();
+
+    // Create a pattern for the coordinates because currently.
     private static Pattern pattern = Pattern.compile("[\\d]{2}.[\\d]+\\s[\\d]{2}.[\\d]+");
     private static Matcher matcher;
     public static ArrayList<String> readTraffik(ArrayList<String> userSelection) {
