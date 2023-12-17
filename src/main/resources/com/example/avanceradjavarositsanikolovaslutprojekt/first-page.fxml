@@ -29,7 +29,7 @@
          <Label text="To" GridPane.rowIndex="1" />
          <Label text="Travel at:" GridPane.rowIndex="2" />
          <TextField fx:id="travelFrom" GridPane.columnIndex="1" />
-         <TextFlow fx:id="travelTo" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <TextField fx:id="travelTo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          <TextField fx:id="departTime" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       </children>
    </GridPane>

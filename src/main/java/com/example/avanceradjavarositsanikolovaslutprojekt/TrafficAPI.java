@@ -8,17 +8,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.eclipsesource.json.*;
-import com.eclipsesource.json.JsonArray;
-import com.eclipsesource.json.JsonObject;
-import com.eclipsesource.json.JsonValue;
 import com.google.gson.Gson;
 public class TrafficAPI {
 
     private static ArrayList<String> gpsPoints = new ArrayList<String>();
     private static Pattern pattern = Pattern.compile("[\\d]{2}.[\\d]+\\s[\\d]{2}.[\\d]+");
     private static Matcher matcher;
-    public static void readTraffik(ArrayList<String> userSelection){
-
+    public static ArrayList<String> readTraffik(ArrayList<String> userSelection){
+        gpsPoints.clear();
         int reachedLength = 0;
         do {
             try {
@@ -32,25 +29,26 @@ public class TrafficAPI {
                         "    </FILTER>\n" +
                         "  </QUERY>\n" +
                         "</REQUEST>";
-                // kör nysaste protocoll https
+
                 HttpClient httpClient = HttpClient.newBuilder()
                         .version(HttpClient.Version.HTTP_2)
                         .build();
-                HttpRequest requestTo = HttpRequest.newBuilder()
+                HttpRequest request = HttpRequest.newBuilder()
                         .uri(URI.create("https://api.trafikinfo.trafikverket.se/v2/data.json"))
                         .method("POST", HttpRequest.BodyPublishers.ofString(trainStation))
                         .header("Content-Type", "application/xml")
                         .build();
 
-                HttpResponse responseTo = httpClient.send(requestTo, HttpResponse.BodyHandlers.ofString());
-                JsonValue jsonTo = Json.parse((String) responseTo.body());
+                HttpResponse response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+                JsonValue jsonTo = Json.parse((String) response.body());
+
                 String temp = jsonTo.asObject()
                         .get("RESPONSE").asObject()
                         .get("RESULT").asArray()
                         .get(0).asObject()
                         .get("TrainStation").asArray()
                         .get(0).asObject().get("Geometry").asObject().get("WGS84").asString();
-                System.out.println("temp "+ temp);
 
                 matcher = pattern.matcher(temp);
                 while(matcher.find()) {
@@ -58,16 +56,16 @@ public class TrafficAPI {
                 }
 
                 gpsPoints.add(temp);
-
-
                 reachedLength++;
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }while (reachedLength < userSelection.size());
+        } while (reachedLength < userSelection.size());
 
         for(String gpsPoint: gpsPoints){
             System.out.println("The GPS points of the stops "+ gpsPoint);
         }
+
+        return gpsPoints;
     }
 }
