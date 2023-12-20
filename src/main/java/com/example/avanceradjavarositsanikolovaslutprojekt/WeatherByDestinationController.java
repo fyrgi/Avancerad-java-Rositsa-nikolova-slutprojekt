@@ -7,7 +7,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,7 +27,7 @@ public class WeatherByDestinationController {
     private ImageView fromSummaryImage, toSummaryImage;
 
     @FXML
-    private TextField travelFrom, travelTo;
+    private TextField travelFrom, travelTo, difference;
 
     @FXML
     private GridPane resultGrid;
@@ -62,6 +64,7 @@ public class WeatherByDestinationController {
             errorResult.setOpacity(100);
             errorResult.setText(TrafficAPI.getError());
             resultGrid.setOpacity(0);
+            difference.setOpacity(0);
         }
 
         points.clear();
@@ -94,6 +97,23 @@ public class WeatherByDestinationController {
                     toSummaryImage.setImage(new Image("https://openweathermap.org/img/wn/"+cityData.get("iconID")+"@2x.png"));
                 }
             }
+        }
+        endSummary();
+    }
+
+    public void endSummary(){
+        double from = Double.parseDouble(fromFeelsLike.getText().substring(0,4));
+        double to = Double.parseDouble(toFeelsLike.getText().substring(0,4));
+        difference.setOpacity(100);
+        if(to < from && (from - to) > 1){
+            difference.setText("Currently it feels colder in "+toDestination.getText()+" by "+ (from - to)+ " degrees.");
+            difference.setStyle("-fx-background-color: #26676e;");
+        } else if (from < to && (to - from) > 1){
+            difference.setText("Currently feels warmer in "+toDestination.getText()+" by "+ (to - from)+ " degrees.");
+            difference.setStyle("-fx-background-color: #d68f4d;");
+        } else {
+            difference.setText("Currently it feels the same at both places.");
+            difference.setStyle("-fx-background-color: #4dd68b;");
         }
     }
 }

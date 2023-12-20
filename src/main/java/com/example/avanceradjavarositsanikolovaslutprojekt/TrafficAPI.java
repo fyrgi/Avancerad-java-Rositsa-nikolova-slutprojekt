@@ -47,17 +47,17 @@ public class TrafficAPI {
                 JsonValue jsonTo = Json.parse((String) response.body());
 
                 try {
-                    String temp = jsonTo.asObject()
+                    String coordinates = jsonTo.asObject()
                             .get("RESPONSE").asObject()
                             .get("RESULT").asArray()
                             .get(0).asObject()
                             .get("TrainStation").asArray()
                             .get(0).asObject().get("Geometry").asObject().get("WGS84").asString();
-                    matcher = pattern.matcher(temp);
+                    matcher = pattern.matcher(coordinates);
                     while (matcher.find()) {
-                        temp = matcher.group();
+                        coordinates = matcher.group();
                     }
-                    gpsPoints.add(temp);
+                    gpsPoints.add(coordinates);
                 } catch (Exception e){
                     error.add("Train Station " + userSelection.get(reachedLength) + " does not exist!");
                 }
