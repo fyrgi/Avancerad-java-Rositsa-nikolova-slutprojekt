@@ -37,18 +37,17 @@ public class WeatherByDestinationController {
         String to = travelTo.getText();
 
         if(from.isEmpty() && to.isEmpty()){
-            travelFrom.setText("Barkarby");
+            travelFrom.setText("Kiruna");
             from = travelFrom.getText();
             travelTo.setText("Växjö");
             to = travelTo.getText();
         } else if (from.isEmpty()) {
-            travelFrom.setText("Barkarby");
+            travelFrom.setText("Kiruna");
             from = travelFrom.getText();
         } else if (to.isEmpty()) {
             travelTo.setText("Växjö");
             to = travelTo.getText();
         }
-        //autocomplete();
         points.add(from);
         points.add(to);
         ArrayList<String> resultGpsPoints = TrafficAPI.readTraffik(points);

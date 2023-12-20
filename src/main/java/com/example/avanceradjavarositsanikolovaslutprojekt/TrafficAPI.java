@@ -25,7 +25,8 @@ public class TrafficAPI {
                         "  <LOGIN authenticationkey=\"demokey\"/>\n" +
                         "  <QUERY objecttype=\"TrainStation\" namespace=\"rail.infrastructure\" schemaversion=\"1.4\">\n" +
                         "    <FILTER>\n" +
-                        "      <EQ name = \"OfficialLocationName\" value = \"" + userSelection.get(reachedLength) + "\" />\n" +
+                        //"      <EQ name = \"OfficialLocationName\" value = \"" + userSelection.get(reachedLength) + "\" />\n" +
+                        "      <LIKE name = \"OfficialLocationName\" value = \"/" + userSelection.get(reachedLength) + "/\" />\n" +
                         "      <EQ name = \"CountryCode\" value = \"SE\" />\n" +
                         "      <EQ name = \"Advertised\" value = \"true\" />\n" +
                         "    </FILTER>\n" +
