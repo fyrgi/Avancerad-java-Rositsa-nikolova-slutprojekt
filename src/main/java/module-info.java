@@ -4,7 +4,6 @@ module com.example.avanceradjavarositsanikolovaslutprojekt {
     requires java.net.http;
     requires minimal.json;
     requires gson;
-    requires org.controlsfx.controls;
 
 
     opens com.example.avanceradjavarositsanikolovaslutprojekt to javafx.fxml;
