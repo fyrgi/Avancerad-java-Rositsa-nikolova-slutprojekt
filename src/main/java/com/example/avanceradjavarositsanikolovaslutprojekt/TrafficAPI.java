@@ -69,9 +69,6 @@ public class TrafficAPI {
         } while (reachedLength < userSelection.size());
 
         if (error.isEmpty()) {
-            for (String gpsPoint : gpsPoints) {
-                System.out.println("The GPS points of the stops " + gpsPoint);
-            }
             return gpsPoints;
         } else {
             for (String error : error) {

@@ -24,7 +24,7 @@ public class WeatherAPI {
 
 
     private static HashMap<String,HashMap<String, String>> result = new HashMap<>();
-    static double min = 99, max = 99, current = 99, feelsLike = 99;
+    static double min = 99, max = 99, current = 99, feelsLike = 99, wind = 99;
     private static String summary = "Cannot Find information!";
 
     public static void getWeather(ArrayList<String> points) {
@@ -64,10 +64,14 @@ public class WeatherAPI {
 
                     JsonValue jv = Json.parse(response.toString());
                     JsonObject jo = jv.asObject();
+                    System.out.println(jo);
                     String locationName = jo.getString("name", "No name");
                     values.put("location", locationName);
                     JsonArray ja1 = jo.get("weather").asArray();
                     JsonObject summaryRecord = ja1.get(0).asObject();
+                    JsonObject summaryWind = jo.get("wind").asObject();
+                    wind = summaryWind.getDouble("speed", 99);
+                    values.put("wind", String.valueOf(wind));
                     JsonObject summaryTemp = jo.get("main").asObject();
                     min = summaryTemp.getDouble("temp_min", 99);
                     values.put("min", String.valueOf(min));

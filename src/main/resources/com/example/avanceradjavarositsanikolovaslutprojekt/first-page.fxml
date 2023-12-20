@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.avanceradjavarositsanikolovaslutprojekt.HelloController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.avanceradjavarositsanikolovaslutprojekt.WeatherByDestinationController">
    <children>
       <VBox alignment="CENTER" prefHeight="472.0" prefWidth="524.0" spacing="20.0">
           <padding>
@@ -30,10 +30,8 @@
             <children>
                <Label text="From" />
                <Label text="To" GridPane.rowIndex="1" />
-               <Label text="Travel at:" GridPane.rowIndex="2" />
                <TextField fx:id="travelFrom" GridPane.columnIndex="1" />
                <TextField fx:id="travelTo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-               <TextField fx:id="departTime" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
          </GridPane>
           <Button onAction="#onHelloButtonClick" text="Search" />
@@ -51,6 +49,7 @@
                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -80,7 +79,7 @@
                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                              </rowConstraints>
                               <children>
-                                 <Label fx:id="fromSummaryText" prefWidth="43.0" wrapText="true" GridPane.columnIndex="1" />
+                                 <Label fx:id="fromSummaryText" prefHeight="17.0" prefWidth="129.0" wrapText="true" GridPane.columnIndex="1" />
                                  <ImageView fx:id="fromSummaryImage" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
                               </children>
                            </GridPane>
@@ -93,11 +92,14 @@
                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               </rowConstraints>
                               <children>
-                                 <Label fx:id="toSummaryText" GridPane.columnIndex="1" />
+                                 <Label fx:id="toSummaryText" prefHeight="17.0" prefWidth="127.0" GridPane.columnIndex="1" />
                                  <ImageView fx:id="toSummaryImage" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
                               </children>
                            </GridPane>
                            <Label fx:id="fromDestination" GridPane.columnIndex="1" />
+                           <Label text="Wind speed" GridPane.rowIndex="6" />
+                           <Label fx:id="fromWind" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                           <Label fx:id="toWind" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                         </children>
                      </GridPane>
                   </children>

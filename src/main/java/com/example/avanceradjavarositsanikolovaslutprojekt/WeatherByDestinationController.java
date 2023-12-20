@@ -5,24 +5,20 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import org.controlsfx.control.textfield.*;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
-public class HelloController {
+public class WeatherByDestinationController {
     @FXML
-    private Label fromCurrent, fromMax, fromMin, fromFeelsLike, fromDestination, fromSummaryText;
+    private Label fromCurrent, fromMax, fromMin, fromFeelsLike, fromDestination, fromSummaryText, fromWind;
+
+    @FXML
+    private Label toCurrent, toMax, toMin, toFeelsLike, toDestination, toSummaryText, toWind;
 
     @FXML
     private ImageView fromSummaryImage, toSummaryImage;
 
-    @FXML
-    private Label toCurrent, toMax, toMin, toFeelsLike, toDestination, toSummaryText;
     @FXML
     private TextField travelFrom, travelTo;
 
@@ -62,19 +58,21 @@ public class HelloController {
             for(String key: cityData.keySet()){
                 if(points.equals("from")){
                     fromDestination.setText(cityData.get("location"));
-                    fromMin.setText(cityData.get("min"));
-                    fromMax.setText(cityData.get("max"));
-                    fromCurrent.setText(cityData.get("current"));
-                    fromFeelsLike.setText(cityData.get("feelsLike"));
+                    fromMin.setText(cityData.get("min")+" C°");
+                    fromMax.setText(cityData.get("max")+" C°");
+                    fromCurrent.setText(cityData.get("current")+" C°");
+                    fromFeelsLike.setText(cityData.get("feelsLike")+" C°");
                     fromSummaryText.setText(cityData.get("summary"));
+                    fromWind.setText(cityData.get("wind")+" m/s");
                     fromSummaryImage.setImage(new Image("https://openweathermap.org/img/wn/"+cityData.get("iconID")+"@2x.png"));
                 } else {
                     toDestination.setText(cityData.get("location"));
-                    toMin.setText(cityData.get("min"));
-                    toMax.setText(cityData.get("max"));
-                    toCurrent.setText(cityData.get("current"));
-                    toFeelsLike.setText(cityData.get("feelsLike"));
+                    toMin.setText(cityData.get("min")+" C°");
+                    toMax.setText(cityData.get("max")+" C°");
+                    toCurrent.setText(cityData.get("current")+" C°");
+                    toFeelsLike.setText(cityData.get("feelsLike")+" C°");
                     toSummaryText.setText(cityData.get("summary"));
+                    toWind.setText(cityData.get("wind")+" m/s");
                     toSummaryImage.setImage(new Image("https://openweathermap.org/img/wn/"+cityData.get("iconID")+"@2x.png"));
                 }
             }

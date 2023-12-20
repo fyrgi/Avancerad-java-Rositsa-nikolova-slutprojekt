@@ -60,7 +60,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.avanceradjavarositsanikolovaslutprojekt/com.example.avanceradjavarositsanikolovaslutprojekt.HelloApplication
+                                com.example.avanceradjavarositsanikolovaslutprojekt/com.example.avanceradjavarositsanikolovaslutprojekt.WeatherByDestinationApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

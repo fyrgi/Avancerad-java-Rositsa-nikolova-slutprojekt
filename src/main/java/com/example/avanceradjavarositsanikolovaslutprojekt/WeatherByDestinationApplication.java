@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class WeatherByDestinationApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("first-page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WeatherByDestinationApplication.class.getResource("first-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Weather by travel destination");
         stage.setScene(scene);
