@@ -77,4 +77,11 @@ public class TrafficAPI {
             return error;
         }
     }
+    public static String getError(){
+        StringBuilder converted = new StringBuilder();
+        for(String err : error){
+            converted.append(err).append("\n");
+        }
+        return converted.toString();
+    }
 }
