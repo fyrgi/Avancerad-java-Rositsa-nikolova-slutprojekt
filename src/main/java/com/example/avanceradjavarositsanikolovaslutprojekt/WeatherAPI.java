@@ -11,15 +11,25 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WeatherAPI {
 
 //https://maps.google.com/?q=<lat>,<lon>
 // https://maps.google.com/?q=59.40544641022305,17.863678328010483
 
+    public WeatherAPI() {
+    }
+
+
+
+    private static HashMap<String,HashMap<String, String>> result = new HashMap<>();
+    static double min = 99, max = 99, current = 99, feelsLike = 99;
+    private static String summary = "Cannot Find information!";
+
     public static void getWeather(ArrayList<String> points) {
         int stopsCount = 0;
-
+        boolean hasFrom = false;
         do{
             try {
                 int spaceIndex = points.get(stopsCount).indexOf(" ");
@@ -49,15 +59,35 @@ public class WeatherAPI {
                     reader.close();
 
                     // Handle the response data
-                    System.out.println(response);
+                    //System.out.println(response);
+                    HashMap<String, String> values = new HashMap<>();
 
                     JsonValue jv = Json.parse(response.toString());
                     JsonObject jo = jv.asObject();
-                    JsonArray ja = jo.get("weather").asArray();
-                    JsonObject inne = ja.get(0).asObject();
-                    String description = inne.getString("description","cant find the stuff!!!");
-                    System.out.println(description);
-
+                    String locationName = jo.getString("name", "No name");
+                    values.put("location", locationName);
+                    JsonArray ja1 = jo.get("weather").asArray();
+                    JsonObject summaryRecord = ja1.get(0).asObject();
+                    JsonObject summaryTemp = jo.get("main").asObject();
+                    min = summaryTemp.getDouble("temp_min", 99);
+                    values.put("min", String.valueOf(min));
+                    max = summaryTemp.getDouble("temp_max", 99);
+                    values.put("max", String.valueOf(max));
+                    current = summaryTemp.getDouble("temp", 99);
+                    values.put("current", String.valueOf(current));
+                    feelsLike = summaryTemp.getDouble("feels_like", 99);
+                    values.put("feelsLike", String.valueOf(feelsLike));
+                    String icon = summaryRecord.getString("icon", "No icon id");
+                    values.put("iconID", icon);
+                    summary = summaryRecord.getString("description", "Cannot Find information!");
+                    values.put("summary", summary);
+                    //create the result with both points
+                    if(!hasFrom){
+                        result.put("from", values);
+                        hasFrom = true;
+                    } else {
+                        result.put("to", values);
+                    }
 
                 } else { //404 403 402 etc error koder
                     // Handle the error response
@@ -71,5 +101,9 @@ public class WeatherAPI {
                 e.printStackTrace();
             }
         } while (stopsCount < points.size());
+    }
+
+    public static HashMap<String, HashMap<String, String>> getResult() {
+        return result;
     }
 }

@@ -5,7 +5,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25165b14-b286-4ef1-bdd9-1482539d18c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/actionfx-controlsfx-1.6.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/actionfx-controlsfx-1.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/actionfx-core-1.6.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/actionfx-core-1.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-1.11.22-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-1.11.22.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-agent-1.11.22-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/byte-buddy-agent-1.11.22.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/classgraph-4.8.157-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/classgraph-4.8.157.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-beanutils-1.9.4-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-beanutils-1.9.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-collections-3.2.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-collections-3.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.12.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/controlsfx-11.1.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/controlsfx-11.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-autocomplete-field-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-base-18.0.1-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-base-18.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-base-18.0.1-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-base-18.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-controls-18.0.1-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-controls-18.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-controls-18.0.1-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-controls-18.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-fxml-18.0.1-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-fxml-18.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-fxml-18.0.1-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-graphics-18.0.1-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-graphics-18.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-graphics-18.0.1-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-graphics-18.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-media-18.0.1-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-media-18.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-media-18.0.1-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-media-18.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-swing-18.0.1-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-swing-18.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-swing-18.0.1-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-web-18.0.1-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-web-18.0.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javafx-web-18.0.1-win.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.annotation-api-1.3.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.annotation-api-1.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.inject-1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.inject-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.9.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/logback-classic-1.2.11-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/logback-classic-1.2.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/logback-core-1.2.11-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/logback-core-1.2.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.32-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.32.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/WeatherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/avanceradjavarositsanikolovaslutprojekt/WeatherAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/avanceradjavarositsanikolovaslutprojekt/first-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/avanceradjavarositsanikolovaslutprojekt/first-page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/avanceradjavarositsanikolovaslutprojekt/result-weather.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +85,7 @@
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -31,13 +99,16 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2ZZWloz5plIiHwBwvwgAol8o8zy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -46,6 +117,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/GritAcademy/Advanced_java/Slutprojekt/Avancerad-java-Rositsa_Nikolova-slutprojekt-main/Avancerad-java-Rositsa_Nikolova-slutprojekt-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,9 +125,19 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pathVariables",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.avanceradjavarositsanikolovaslutprojekt.HelloApplication" />
+      <module name="Avancerad-java-Rositsa-nikolova-slutprojekt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,12 +147,16 @@
       <option name="presentableId" value="Default" />
       <updated>1702630238101</updated>
       <workItem from="1702630239154" duration="3022000" />
-      <workItem from="1702727713109" duration="31511000" />
+      <workItem from="1702727713109" duration="31629000" />
+      <workItem from="1702979020780" duration="20617000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
