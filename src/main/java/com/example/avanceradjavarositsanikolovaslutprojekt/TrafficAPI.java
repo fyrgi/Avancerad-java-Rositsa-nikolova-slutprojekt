@@ -71,9 +71,6 @@ public class TrafficAPI {
         if (error.isEmpty()) {
             return gpsPoints;
         } else {
-            for (String error : error) {
-                System.out.println("The error " + error);
-            }
             return error;
         }
     }
