@@ -19,41 +19,24 @@ public class WeatherByDestinationController {
     private TextArea errorResult;
     @FXML
     private Label fromCurrent, fromMax, fromMin, fromFeelsLike, fromDestination, fromSummaryText, fromWind;
-
     @FXML
     private Label toCurrent, toMax, toMin, toFeelsLike, toDestination, toSummaryText, toWind;
-
     @FXML
     private ImageView fromSummaryImage, toSummaryImage;
-
     @FXML
     private TextField travelFrom, travelTo, difference;
-
     @FXML
     private GridPane resultGrid;
-
     @FXML
-    protected void onHelloButtonClick() {
+    protected void onSearchButtonClick() {
         ArrayList<String> points = new ArrayList<>();
         String from = travelFrom.getText();
         String to = travelTo.getText();
-
-        if(from.isEmpty() && to.isEmpty()){
-            travelFrom.setText("Kiruna");
-            from = travelFrom.getText();
-            travelTo.setText("Växjö");
-            to = travelTo.getText();
-        } else if (from.isEmpty()) {
-            travelFrom.setText("Kiruna");
-            from = travelFrom.getText();
-        } else if (to.isEmpty()) {
-            travelTo.setText("Växjö");
-            to = travelTo.getText();
-        }
         points.add(from);
         points.add(to);
         ArrayList<String> resultGpsPoints = TrafficAPI.readTraffik(points);
-
+        // if there are no errors in the trafficapi the system shows the result grid, otherwise
+        // it hides the result grid and shows the error textare instead.
         if(TrafficAPI.getError().isEmpty()){
             WeatherAPI.getWeather(resultGpsPoints);
             getTheResult();
@@ -70,13 +53,17 @@ public class WeatherByDestinationController {
         points.clear();
 
     }
+
+    // Set the values in the result grid which is displayed if there are no errors.
     @FXML
-    public  void getTheResult(){
+    public void getTheResult(){
         HashMap<String, HashMap<String, String>> allData = new HashMap<String, HashMap<String, String>>();
         allData = WeatherAPI.getResult();
         for(String points: allData.keySet()){
             HashMap<String, String> cityData = allData.get(points);
             for(String key: cityData.keySet()){
+                // another hardcoded part where I make it impossible to have more than 2 stations.
+                // Probably it will be better if this data belongs to an object of a class.
                 if(points.equals("from")){
                     fromDestination.setText(cityData.get("location"));
                     fromMin.setText(cityData.get("min")+" °C");
@@ -101,15 +88,17 @@ public class WeatherByDestinationController {
         endSummary();
     }
 
+    // A little summary of the difference in the Feels like temperature.
     public void endSummary(){
-        double from = Double.parseDouble(fromFeelsLike.getText().substring(0,4));
-        double to = Double.parseDouble(toFeelsLike.getText().substring(0,4));
+        float from = Float.parseFloat(fromFeelsLike.getText().substring(0,4));
+        float to = Float.parseFloat(toFeelsLike.getText().substring(0,4));
         difference.setOpacity(100);
         if(to < from && (from - to) > 1){
-            difference.setText("Currently it feels colder in "+toDestination.getText()+" by "+ (from - to)+ " degrees.");
+            // the double makes the result too sensitive and not formatted well. Changed to float.
+            difference.setText("Currently it feels colder in "+toDestination.getText()+" by " + (from - to) + " degrees.");
             difference.setStyle("-fx-background-color: #26676e;");
         } else if (from < to && (to - from) > 1){
-            difference.setText("Currently feels warmer in "+toDestination.getText()+" by "+ (to - from)+ " degrees.");
+            difference.setText("Currently feels warmer in "+toDestination.getText()+" by " + (to - from) + " degrees.");
             difference.setStyle("-fx-background-color: #d68f4d;");
         } else {
             difference.setText("Currently it feels the same at both places.");

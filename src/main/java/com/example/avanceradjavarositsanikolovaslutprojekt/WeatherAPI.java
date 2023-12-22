@@ -27,13 +27,15 @@ public class WeatherAPI {
 
     public static void getWeather(ArrayList<String> points) {
         int stopsCount = 0;
+        // other name
         boolean hasFrom = false;
         do{
             try {
+                // get the coordinates of the stations
                 int spaceIndex = points.get(stopsCount).indexOf(" ");
                 String lat = points.get(stopsCount).substring(spaceIndex+1);
                 String lon = points.get(stopsCount).substring(0, spaceIndex);
-
+                // get the weather by coordinates
                 URL url = new URL("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=5756ae175fada5c93f07cf136851b305&units=metric");
 
                 // Open a connection to the URL
@@ -55,11 +57,9 @@ public class WeatherAPI {
                         response.append(line);
                     }
                     reader.close();
-
-                    // Handle the response data
-                    //System.out.println(response);
+                    // The hashmap could be an actual Class object instead and the extacted
+                    // values could be assigned to the class's attributes.
                     HashMap<String, String> values = new HashMap<>();
-
                     JsonValue jv = Json.parse(response.toString());
                     JsonObject jo = jv.asObject();
                     String locationName = jo.getString("name", "No name");
@@ -82,16 +82,17 @@ public class WeatherAPI {
                     values.put("iconID", icon);
                     summary = summaryRecord.getString("description", "Cannot Find information!");
                     values.put("summary", summary);
-                    //create the result with both points
+                    // create the result with both points. Despite wanting to have more than 2 points
+                    // this code makes it impossible.
                     if(!hasFrom){
                         result.put("from", values);
                         hasFrom = true;
                     } else {
                         result.put("to", values);
                     }
-
-                } else { //404 403 402 etc error koder
-                    // Handle the error response
+                } else {
+                    // Handle the error response. For now it is impossible since I did not manage to
+                    // get another http status code.
                     System.out.println("Error response code: " + responseCode);
                 }
                 // Increase the counter to keep finding points
